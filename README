@@ -1,0 +1,12 @@
+Instanciate on OpenShift:
+
+    rhc app-create python-2.7 cron-1.4 postgresql-9.2 \
+        -a prod
+        -e OPENSHIFT_PYTHON_WSGI_APPLICATION=src/lpc/wsgi.py \
+		--from-code https://github.com/libertalia/lpc.git \
+		--no-git
+
+Note: libsass won't compile on openshift because it has gcc 4.4, effects:
+
+- it's not installed in requirements,
+- we pre-build and version static files in wsgi/static/collected

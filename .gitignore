@@ -1,7 +1,8 @@
 *.pyc
 db.sqlite
 data
-wsgi/static
 bower_components/
-log/
 node_modules/
+log
+lpc_env
+env

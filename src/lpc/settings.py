@@ -13,8 +13,8 @@ from django.utils.translation import ugettext_lazy as _
 from socket import gethostname
 # }}}
 # {{{ paths
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, os.path.pardir))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, os.path.pardir, os.path.pardir))
 
 DATA_DIR = os.environ.get(
     'OPENSHIFT_DATA_DIR',
@@ -51,7 +51,6 @@ STATICFILES_DIRS = (
 )
 if DATA_DIR:
     MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-    COMPRESS_ROOT = os.path.join(DATA_DIR, 'compress')
 
 if PUBLIC_DIR:
     STATIC_ROOT = os.path.join(PUBLIC_DIR, 'collected')
@@ -272,6 +271,7 @@ SASS_PROCESSOR_INCLUDE_DIRS = (
 COERCE_DECIMAL_TO_STRING = True
 FSM_ADMIN_FORCE_PERMIT = True
 ROBOTS_META_TAGS = ('noindex', 'nofollow')
+COMPRESS_OFFLINE = bool(os.environ.get('OPENSHIFT_REPO_DIR', ''))
 # }}}
 # {{{ installed apps
 INSTALLED_APPS = (
