@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -xe
+
+source ${OPENSHIFT_HOMEDIR}app-root/runtime/dependencies/python/virtenv/bin/activate
+
+pip install -U pip setuptools
+pip install -r ${OPENSHIFT_REPO_DIR}requirements.txt
+
+pushd ${OPENSHIFT_REPO_DIR}
+if [ -f ${OPENSHIFT_DATA_DIR}sentry ]; then
+    pip install raven
+fi
+popd
+
+pushd ${OPENSHIFT_DATA_DIR}
+if ! [ -d node ]; then
+    wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-x64.tar.gz
+    tar xvzf node-v4.2.2-linux-x64.tar.gz
+    ln -sfn node-v4.2.2-linux-x64 node
+fi
+
+PATH="${OPENSHIFT_DATA_DIR}node/bin:$PATH"
+HOME=$OPENSHIFT_DATA_DIR
+CI=true
+npm install
+npm install bower
+node_modules/.bin/bower install
+
+mkdir -p wsgi
+./manage.py collectstatic --noinput
+python ${OPENSHIFT_REPO_DIR}manage.py migrate --noinput
+popd
+
+mkdir -p ${OPENSHIFT_DATA_DIR}media
+ln -sf ${OPENSHIFT_DATA_DIR}media ${OPENSHIFT_REPO_DIR}wsgi/static/media
