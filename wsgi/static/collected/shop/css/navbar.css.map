@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../../../home/jpic/work/libertalia/libertalia_env/lib/python2.7/site-packages/shop/static/shop/css/navbar.css",
+	"sources": [
+		"../../../home/jpic/work/libertalia/libertalia_env/lib/python2.7/site-packages/shop/static/shop/css/navbar.scss"
+	],
+	"mappings": "AAAA,AACC,WADU,CACV,oBAAoB,CAAC;EACpB,OAAO,EAAE,SAAU,GACnB",
+	"names": []
+}

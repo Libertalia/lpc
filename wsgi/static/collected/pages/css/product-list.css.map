@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../../../../home/jpic/work/libertalia/lpc/src/lpc/static/pages/css/product-list.css",
+	"sources": [
+		"../../../../home/jpic/work/libertalia/lpc/src/lpc/static/pages/css/product-list.scss"
+	],
+	"mappings": "AACA,AAAA,eAAe,CAAC;EAIf,aAAa,EAAE,IAAK,GACpB;EALD,AACC,eADc,CACd,EAAE,CAAC;IACF,UAAU,EAAE,IAAK,GACjB;;AAIF,AAAA,WAAW,CAAC;EACX,UAAU,EAAE,eAAgB,GAC5B",
+	"names": []
+}
