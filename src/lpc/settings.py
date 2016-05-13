@@ -136,7 +136,6 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 WSGI_APPLICATION = 'lpc.wsgi.application'
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 SESSION_SAVE_EVERY_REQUEST = True
 SITE_ID = True
