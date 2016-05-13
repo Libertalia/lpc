@@ -210,8 +210,13 @@ CMS_PLACEHOLDER_CONF = {
 }
 
 
-CMSPLUGIN_CASCADE_PLUGINS = ('cmsplugin_cascade.segmentation', 'cmsplugin_cascade.generic',
-    'cmsplugin_cascade.link', 'shop.cascade', 'cmsplugin_cascade.bootstrap3',)
+CMSPLUGIN_CASCADE_PLUGINS = (
+    'cmsplugin_cascade.segmentation',
+    'cmsplugin_cascade.generic',
+    'cmsplugin_cascade.link',
+    'shop.cascade',
+    'cmsplugin_cascade.bootstrap3',
+)
 
 CMSPLUGIN_CASCADE = {
     'dependencies': {
@@ -230,7 +235,10 @@ CMSPLUGIN_CASCADE = {
         'ShopProceedButton',
     ),
     'segmentation_mixins': (
-        ('shop.cascade.segmentation.EmulateCustomerModelMixin', 'shop.cascade.segmentation.EmulateCustomerAdminMixin'),
+        (
+            'shop.cascade.segmentation.EmulateCustomerModelMixin',
+            'shop.cascade.segmentation.EmulateCustomerAdminMixin'
+        ),
     ),
 }
 
