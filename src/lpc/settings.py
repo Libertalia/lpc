@@ -278,7 +278,6 @@ SASS_PROCESSOR_INCLUDE_DIRS = (
 COERCE_DECIMAL_TO_STRING = True
 FSM_ADMIN_FORCE_PERMIT = True
 ROBOTS_META_TAGS = ('noindex', 'nofollow')
-COMPRESS_OFFLINE = bool(os.environ.get('OPENSHIFT_REPO_DIR', ''))
 # }}}
 # {{{ installed apps
 INSTALLED_APPS = (
