@@ -7,6 +7,7 @@ source ${OPENSHIFT_HOMEDIR}app-root/runtime/dependencies/python/virtenv/bin/acti
 
 pip install -U pip setuptools
 pip install --no-deps -Ur ${OPENSHIFT_REPO_DIR}/requirements.txt
+pip install -Ue ${OPENSHIFT_REPO_DIR}
 
 pushd ${OPENSHIFT_DATA_DIR}
 if ! [ -d node ]; then
